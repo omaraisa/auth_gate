@@ -1,0 +1,526 @@
+
+:root {
+  --background: #ffffff;
+  --foreground: #1d1d1d;
+
+  /* Primary Colors */
+  --primary: #047B8B; /* Default primary color */
+  --primary-transparent: #047b8bc2; /* Default primary color */
+  --primary-light: #3d97a3; /* Lighter shade of primary */
+  --primary-light-transparent: #3d97a39a; /* Lighter shade of primary */
+  --primary-dark: #145058; /* Darker shade of primary */
+  --primary-dark-transparent: #145058b7; /* Darker shade of primary */
+
+  /* Secondary Colors */
+  --secondary: #e7af39; /* Default secondary color */
+  --secondary-light: #f8c862; /* Lighter shade of secondary */
+  --secondary-dark: #bb8f30; /* Darker shade of secondary */
+
+  /* Tertiary Colors */
+  --tertiary: #3BBFAD; /* Default tertiary color */
+  --tertiary-light: #51C6B7; /* Lighter shade of tertiary */
+  --tertiary-dark: #2D9C95; /* Darker shade of tertiary */
+
+  /* Danger Colors */
+  --danger: #ed544f; /* Default danger color */
+  --danger-light: #f7736f; /* Lighter shade of danger */
+  --danger-dark: #9b2c28; /* Darker shade of danger */
+
+  /* Gray Colors */
+  --gray: #6d6d6d; /* Default gray color */
+  --gray-light: #a8a8a8; /* Lighter shade of gray */
+  --gray-dark: #4a4a4a; /* Darker shade of gray */
+
+  --green:#31b36b;
+}
+
+[dir="rtl"] {
+  font-family: var(--font-droid-arabic-kufi), sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+[dir="ltr"] {
+  font-family: var(--font-oxanium), sans-serif;
+  direction: ltr;
+  text-align: left;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+
+/* Styles for English (en) */
+:lang(en) {
+  font-family: var(--font-oxanium), Arial, Helvetica, sans-serif;
+  direction: ltr;
+  text-align: left;
+}
+
+/* Styles for Arabic (ar) */
+:lang(ar) {
+  font-family: var(--font-droid-arabic-kufi), sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+
+/* Common button styles */
+.btn {
+  align-items: center;
+  appearance: none;
+  border-radius: 2px;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1;
+  padding: 10px;
+  list-style: none;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  user-select: none;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3); /* Glow color */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.8s ease, height 0.8s ease, opacity 0.8s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover::before {
+  width: 200%;
+  height: 200%;
+  opacity: 1;
+}
+
+.btn:active {
+  transform: translateY(0);
+  transition-duration: 0.25s;
+}
+
+.btn:active::before {
+  width: 250%;
+  height: 250%;
+  opacity: 0;
+}
+
+/* Button variants */
+.btn-primary {
+  background-color: var(--primary-dark-transparent);
+  color: var(--background);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--background);
+}
+
+.btn-white {
+  background-color: var(--background);
+  color: var(--primary);
+}
+
+.btn-green {
+  background-color: var(--green);
+  color: var(--background);
+}
+
+.btn-gray {
+  background-color: var(--gray-light);
+  color: var(--background);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: var(--background);
+}
+
+/* Close button styles */
+.close-btn {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.close-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.8s ease, height 0.8s ease, opacity 0.8s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.close-btn:hover {
+  transform: rotate(180deg);
+}
+
+.close-btn:hover::before {
+  width: 200%;
+  height: 200%;
+  opacity: 1;
+}
+
+.close-btn:active {
+  transform: rotate(360deg);
+}
+
+.close-btn:active::before {
+  width: 250%;
+  height: 250%;
+  opacity: 0;
+}
+
+/* Switch styles */
+.switch-input {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.switch-lable {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 3rem;
+  height: 1.5rem;
+  background: var(--gray-light);
+  display: block;
+  border-radius: 1.5rem;
+  position: relative;
+}
+
+.switch-lable:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 1.1rem;
+  height: 1.1rem;
+  background: #fff;
+  border-radius: 1.1rem;
+  transition: 0.3s;
+}
+
+.switch-lable:hover {
+  box-shadow: 1px 1px 8px var(--gray-dark);
+}
+
+.switch-input:checked + .switch-lable {
+  background: var(--secondary-light);
+}
+
+.switch-input:checked + .switch-lable:after {
+  left: calc(100% - 3px);
+  transform: translateX(-100%);
+}
+
+.switch-lable:active:after {
+  width: 40px;
+}
+
+.switch-input:disabled + .switch-lable:after {
+  background: #c2c2c2;
+}
+
+.switch-input:disabled:checked + .switch-lable:after {
+  background: #b3caff;
+}
+
+/* Checkbox styles */
+.checkbox {
+  display: none;
+}
+
+.tick-label {
+  min-width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--gray-light);
+  transform: translateY(-5%);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s ease transform, 0.2s ease background-color, 0.2s ease box-shadow;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.tick-label:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  margin: 0 auto;
+  background-color: #fff;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  box-shadow: inset 1 2px 8px var(--gray);
+  transition: 0.2s ease width, 0.2s ease height;
+}
+
+.tick-label:hover:before {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.tick-label:hover {
+  box-shadow: 0 3px 8px var(--gray);
+}
+
+.tick-label:active {
+  transform: scale(0.6);
+}
+
+#tick_mark {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.375rem;
+  left: 0;
+  width: 0.375rem;
+  height: 0.375rem;
+  margin: 0 auto;
+  transform: rotateZ(-40deg);
+}
+
+#tick_mark:before,
+#tick_mark:after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  border-radius: 2px;
+  opacity: 0;
+  transition: 0.3s ease transform, 0.3s ease opacity;
+}
+
+#tick_mark:before {
+  left: 0;
+  bottom: 0;
+  width: 0.1875rem;
+  height: 0.6rem;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.23);
+  transform: translateY(-68px);
+}
+
+#tick_mark:after {
+  left: 0;
+  bottom: 0;
+  width: 1.05rem;
+  height: 0.1875rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.23);
+  transform: translateX(78px);
+}
+
+.checkbox:checked + .tick-label {
+  background-color: var(--secondary);
+}
+
+.checkbox:checked:hover + .tick-label {
+  box-shadow: 0 3px 8px var(--secondary-dark);
+}
+
+.checkbox:checked + .tick-label:before {
+  width: 0;
+  height: 0;
+}
+
+.checkbox:checked + .tick-label #tick_mark:before,
+.checkbox:checked + .tick-label #tick_mark:after {
+  transform: translate(0);
+  opacity: 1;
+}
+
+/* Input and textarea styles */
+.textInput {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.label {
+  position: absolute;
+  top: 20px;
+  right: 12px;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255);
+  font-weight: 500;
+  transform-origin: 0 0;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+:lang(en) .label {
+  left: 12px;
+}
+
+:lang(ar) .label {
+  right: 12px;
+}
+
+.input-text,
+.textarea-input {
+  width: 100%;
+  border: 0;
+  padding: 2rem 1rem 0 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.055);
+  color: var(--primary-dark);
+  transition: all 0.5s ease;
+  font-size: inherit;
+}
+
+.input-text:hover,
+.textarea-input:hover {
+  box-shadow: inset 0 -1px 0 var(--primary);
+}
+
+.input-text:not(:placeholder-shown) + .label,
+.textarea-input:not(:placeholder-shown) + .label {
+  color: #fff;
+  transform: translate3d(0, -12px, 0) scale(0.75);
+}
+
+.input-text:focus,
+.textarea-input:focus {
+  outline: none;
+  box-shadow: inset 0 -2px 0 var(--secondary-dark);
+}
+
+.input-text:focus + .label,
+.textarea-input:focus + .label {
+  transform: translate3d(0, -12px, 0) scale(0.75);
+}
+
+.textarea-input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Select styles */
+.select {
+  position: relative;
+  width: 100%;
+}
+
+.select select {
+  appearance: none;
+  width: 100%;
+  padding: 8px 15px;
+  font-size: 16px;
+  color: var(--primary);
+  background-color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-in;
+}
+
+.select select:hover {
+  background-color: var(--primary-dark-transparent);
+  color: #fff;
+}
+
+.select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-color: var(--primary) transparent transparent transparent;
+  pointer-events: none;
+}
+
+:lang(en) .select::after {
+  right: 10px;
+}
+
+:lang(ar) .select::after {
+  left: 10px;
+}
+
+.select select:focus + .select::after {
+  border-color: transparent transparent var(--primary) transparent;
+  top: 40%;
+}
+
+.select select option:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+/* Number input styles */
+input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: var(--primary-dark);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--gray-light);
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.055);
+  transition: all 0.3s ease;
+}
+
+input[type="number"]:hover {
+  box-shadow: inset 0 -1px 0 var(--primary);
+}
+
+input[type="number"]:focus {
+  outline: none;
+  box-shadow: inset 0 -2px 0 var(--secondary-dark);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]::-moz-inner-spin-button,
+input[type="number"]::-moz-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}

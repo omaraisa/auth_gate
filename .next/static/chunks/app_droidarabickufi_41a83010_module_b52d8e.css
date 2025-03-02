@@ -1,0 +1,27 @@
+/* [project]/app/droidarabickufi_41a83010.module.css [app-client] (css) */
+@font-face {
+  font-family: droidArabicKufi;
+  src: url("../media/alfont_com_AlFont_com_Droid_Arabic_Kufi-s.p.810ae895.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: droidArabicKufi Fallback;
+  src: local(Arial);
+  ascent-override: 128.17%;
+  descent-override: 61.52%;
+  line-gap-override: 0.88%;
+  size-adjust: 100.0%;
+}
+
+.droidarabickufi_41a83010-module__1r41Sa__className {
+  font-family: droidArabicKufi, droidArabicKufi Fallback;
+}
+
+.droidarabickufi_41a83010-module__1r41Sa__variable {
+  --font-droid-arabic-kufi: "droidArabicKufi", "droidArabicKufi Fallback";
+}
+
+/*# sourceMappingURL=app_droidarabickufi_41a83010_module_b52d8e.css.map*/
