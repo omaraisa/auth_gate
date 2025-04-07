@@ -24,17 +24,7 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 __turbopack_esm__({
     "default": (()=>middleware)
 });
-async function middleware(req) {
-// const cookie = (await cookies()).get("token")?.value;
-// const token = await decrypt(cookie);
-// if (token?.email) {
-//     console.log(token)
-//     return NextResponse.redirect(new URL("/dashboard", req.url));
-// } else {
-//     console.log("error: anauthorized")
-//     return NextResponse.redirect(new URL("/", req.url));
-// }
-}
+async function middleware(req) {}
 }}),
 }]);
 

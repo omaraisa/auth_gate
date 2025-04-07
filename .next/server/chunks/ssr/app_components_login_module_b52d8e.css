@@ -1,0 +1,90 @@
+/* [project]/app/components/login.module.css [app-client] (css) */
+@keyframes login-module__Xqh1oq__float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes login-module__Xqh1oq__bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes login-module__Xqh1oq__typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes login-module__Xqh1oq__fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes login-module__Xqh1oq__fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes login-module__Xqh1oq__fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-module__Xqh1oq__animate-bounce-slow {
+  animation: 3s infinite login-module__Xqh1oq__bounce-slow;
+}
+
+.login-module__Xqh1oq__animate-typewriter {
+  animation: 3s steps(40, end) 1s forwards login-module__Xqh1oq__typewriter;
+}
+
+.login-module__Xqh1oq__animate-fade-in {
+  animation: .5s ease-in-out login-module__Xqh1oq__fade-in;
+}
+
+.login-module__Xqh1oq__animate-fade-in-up {
+  animation: .8s ease-out login-module__Xqh1oq__fade-in-up;
+}
+
+.login-module__Xqh1oq__animate-fade-in-down {
+  animation: .8s ease-out login-module__Xqh1oq__fade-in-down;
+}
+
+/*# sourceMappingURL=app_components_login_module_b52d8e.css.map*/

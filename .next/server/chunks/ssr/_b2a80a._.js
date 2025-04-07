@@ -75,8 +75,10 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$app$2d$render$2f$encryption$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/server/app-render/encryption.js [app-rsc] (ecmascript)");
-// import { createToken, deleteToken } from "../lib/token";
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$api$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_import__("[project]/node_modules/next/dist/api/navigation.react-server.js [app-rsc] (ecmascript) <module evaluation>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$arcgis$2f$core$2f$config$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/@arcgis/core/config.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$arcgis$2f$core$2f$identity$2f$IdentityManager$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/@arcgis/core/identity/IdentityManager.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$arcgis$2f$core$2f$identity$2f$ServerInfo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/@arcgis/core/identity/ServerInfo.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$lib$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/zod/lib/index.mjs [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/client/components/navigation.react-server.js [app-rsc] (ecmascript)");
@@ -84,17 +86,28 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 ;
-const testUser = {
-    id: "1",
-    email: "i@m.cool",
-    password: "12345678"
+;
+;
+;
+const config = {
+    apiKey: ("TURBOPACK compile-time value", "AAPKc691d193fde14ea9bae49f48970f5fbcmPjkAffm__8tJdoM-iasTahd05z_ngTfiIdqY_FcU8Vp1t0my13dG7TlKBWfy5cx") ?? 'API_KEY_NOT_SET',
+    portalUrl: ("TURBOPACK compile-time value", "https://gis.jda.gov.sa/portal") ?? 'PORTAL_URL_NOT_SET',
+    tokenServiceUrl: ("TURBOPACK compile-time value", "https://gis.jda.gov.sa/portal/sharing/rest/generateToken") ?? 'PORTAL_TOKEN_NOT_SET'
 };
+__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$arcgis$2f$core$2f$config$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].apiKey = config.apiKey;
+const serverInfo = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$arcgis$2f$core$2f$identity$2f$ServerInfo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"]({
+    server: config.portalUrl,
+    tokenServiceUrl: config.tokenServiceUrl
+});
+__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$arcgis$2f$core$2f$identity$2f$IdentityManager$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].registerServers([
+    serverInfo
+]);
 const loginSchema = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$lib$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["z"].object({
-    email: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$lib$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["z"].string().email({
-        message: "Invalid email address"
+    username: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$lib$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["z"].string().min(3, {
+        message: "Invalid username"
     }).trim(),
-    password: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$lib$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["z"].string().min(8, {
-        message: "Password must be at least 8 characters"
+    password: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$lib$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["z"].string().min(4, {
+        message: "Password must be at least 4 characters"
     }).trim()
 });
 async function /*#__TURBOPACK_DISABLE_EXPORT_MERGING__*/ login(prevState, formData) {
@@ -104,19 +117,34 @@ async function /*#__TURBOPACK_DISABLE_EXPORT_MERGING__*/ login(prevState, formDa
             errors: result.error.flatten().fieldErrors
         };
     }
-    const { email, password } = result.data;
-    if (email !== testUser.email || password !== testUser.password) {
+    const { username, password } = result.data;
+    try {
+        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$arcgis$2f$core$2f$identity$2f$IdentityManager$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].generateToken(serverInfo, {
+            username: username,
+            password: password,
+            client: 'referer',
+            referer: "http://localhost:3000"
+        });
+        if (serverInfo.server) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$arcgis$2f$core$2f$identity$2f$IdentityManager$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].registerToken({
+                server: serverInfo.server,
+                token: response.token,
+                expires: response.expires
+            });
+        }
+        // Assuming successful ArcGIS authentication implies user is valid
+        // await createToken("arcgis_user"); // Use a generic ID or fetch from ArcGIS
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])("http://localhost:3000");
+    } catch (error) {
+        console.error('ArcGIS Authentication failed:', error);
         return {
             errors: {
-                email: [
-                    "Invalid email or password"
+                username: [
+                    "Invalid username or password"
                 ]
             }
         };
     }
-    // await createToken(testUser.id);
-    // redirect("http://localhost:3000");
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])("/geoportal");
 }
 async function /*#__TURBOPACK_DISABLE_EXPORT_MERGING__*/ logout() {
     // await deleteToken();

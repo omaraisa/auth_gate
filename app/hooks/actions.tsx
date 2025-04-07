@@ -1,44 +1,51 @@
-"use server";
+'use server';
 
-import { z } from "zod";
-import { createToken, deleteToken } from "../lib/token";
-import { redirect } from "next/navigation";
-
-const testUser = {
-  id: "1",
-  email: "i@m.cool",
-  password: "82js72h1/113s",
-};
-
-const loginSchema = z.object({
-  email: z.string().email({ message: "Invalid email address" }).trim(),
-  password: z.string().min(8, { message: "Password must be at least 8 characters" }).trim(),
-});
+import { cookies } from 'next/headers';
+import { z } from 'zod';
+import { redirect } from 'next/navigation';
+import { serverAuthenticateArcGIS } from  '../lib/authenticateArcGIS';
 
 export async function login(prevState: any, formData: FormData) {
-  const result = loginSchema.safeParse(Object.fromEntries(formData));
+  const schema = z.object({
+    username: z.string().min(3),
+    password: z.string().min(4),
+  });
 
-  if (!result.success) {
+  const parsed = schema.safeParse(Object.fromEntries(formData));
+  if (!parsed.success) {
     return {
-      errors: result.error.flatten().fieldErrors,
+      errors: parsed.error.flatten().fieldErrors,
     };
   }
 
-  const { email, password } = result.data;
+  const { username, password } = parsed.data;
 
-  if (email !== testUser.email || password !== testUser.password) {
-    return {
-      errors: {
-        email: ["Invalid email or password"],
-      },
-    };
+  const tokenData = await serverAuthenticateArcGIS(username, password);
+
+  if (tokenData) {
+    const cookieStore = await cookies();
+    cookieStore.set('arcgis_token', tokenData.token, {
+      httpOnly: false,
+      secure: true,
+      sameSite: 'lax',
+      path: '/',
+      expires: new Date(tokenData.expires),
+    });
+
+    cookieStore.set('arcgis_token_expiry', tokenData.expires.toString(), {
+      httpOnly: false,
+      secure: true,
+      sameSite: 'lax',
+      path: '/',
+      expires: new Date(tokenData.expires),
+    });
+
+    redirect(process.env.NEXT_PUBLIC_GEOPORTAL_URL || '/');
   }
-    await createToken(testUser.id);
 
-    redirect("http://localhost:3000");
-}
-
-export async function logout() {
-    await deleteToken();
-    redirect("/login");
+  return {
+    errors: {
+      username: ['Invalid username or password'],
+    },
+  };
 }

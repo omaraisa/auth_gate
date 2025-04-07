@@ -2,6 +2,6 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/middleware.ts"],"sourcesContent":["import { cookies } from \"next/headers\";\r\nimport { NextRequest, NextResponse } from \"next/server\";\r\nimport { decrypt } from \"./app/lib/token\";\r\n\r\n\r\nexport default async function middleware(req: NextRequest) {\r\n    // const cookie = (await cookies()).get(\"token\")?.value;\r\n    // const token = await decrypt(cookie);\r\n    \r\n    // if (token?.email) {\r\n    //     console.log(token)\r\n    //     return NextResponse.redirect(new URL(\"/dashboard\", req.url));\r\n    // } else {\r\n    //     console.log(\"error: anauthorized\")\r\n    //     return NextResponse.redirect(new URL(\"/\", req.url));\r\n    // }\r\n\r\n  }"],"names":[],"mappings":";;;AAKe,eAAe,WAAW,GAAgB;AACrD,wDAAwD;AACxD,uCAAuC;AAEvC,sBAAsB;AACtB,yBAAyB;AACzB,oEAAoE;AACpE,WAAW;AACX,yCAAyC;AACzC,2DAA2D;AAC3D,IAAI;AAEN"}},
-    {"offset": {"line": 37, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/middleware.ts"],"sourcesContent":["import { cookies } from \"next/headers\";\r\nimport { NextRequest, NextResponse } from \"next/server\";\r\n\r\nexport default async function middleware(req: NextRequest) {\r\n\r\n\r\n}"],"names":[],"mappings":";;;AAGe,eAAe,WAAW,GAAgB,GAGzD"}},
+    {"offset": {"line": 27, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
 }

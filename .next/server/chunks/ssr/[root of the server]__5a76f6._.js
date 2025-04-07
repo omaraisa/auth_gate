@@ -166,14 +166,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 const testUser = {
     id: "1",
-    email: "i@m.cool",
+    username: "coolUser",
     password: "82js72h1/113s"
 };
 const loginSchema = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$lib$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["z"].object({
-    email: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$lib$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["z"].string().email({
-        message: "Invalid email address"
+    username: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$lib$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["z"].string().min(3, {
+        message: "Invalid username"
     }).trim(),
-    password: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$lib$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["z"].string().min(8, {
+    password: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$lib$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["z"].string().min(4, {
         message: "Password must be at least 8 characters"
     }).trim()
 });
@@ -184,12 +184,12 @@ async function /*#__TURBOPACK_DISABLE_EXPORT_MERGING__*/ login(prevState, formDa
             errors: result.error.flatten().fieldErrors
         };
     }
-    const { email, password } = result.data;
-    if (email !== testUser.email || password !== testUser.password) {
+    const { username, password } = result.data;
+    if (username !== testUser.username || password !== testUser.password) {
         return {
             errors: {
-                email: [
-                    "Invalid email or password"
+                username: [
+                    "Invalid username or password"
                 ]
             }
         };

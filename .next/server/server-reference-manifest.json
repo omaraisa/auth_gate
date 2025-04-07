@@ -1,9 +1,9 @@
 {
   "node": {
-    "0037d42e6d5449220b9cceea5389e6245c24e65693": {
+    "00eacf26e05964acbee5c3cc88defa486b097d3968": {
       "workers": {
         "app/page": {
-          "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/hooks/actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/lib/authenticateArcGIS.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/hooks/actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
         }
       },
@@ -14,7 +14,18 @@
     "60b8b2a1b08ee0d80a068624eb9dd6cc5f5a191760": {
       "workers": {
         "app/page": {
-          "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/hooks/actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/lib/authenticateArcGIS.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/hooks/actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "7f738c7c059b0b41aa781eb5902bf76d0004e754e7": {
+      "workers": {
+        "app/page": {
+          "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/lib/authenticateArcGIS.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/hooks/actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
         }
       },
