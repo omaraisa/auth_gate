@@ -32,10 +32,10 @@ export const serverAuthenticateArcGIS = async (
         console.error('ArcGIS Token Error:', data.error);
         return null;
       }
-  
-    return {
+
+      return {
       token: data.token,
-      expires: Date.now() + data.expires * 1000,
+      expires: data.expires,
     };
     } catch (err) {
       console.error(err);

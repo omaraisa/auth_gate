@@ -75,7 +75,7 @@ export function LoginForm() {
         <div className="bg-gray-50 px-8 py-4 hover:bg-gray-100 transition-colors duration-200">
           <div className="text-sm">
             <button onClick={() => setShowPopup(true)} className="font-medium text-blue-600 hover:text-blue-500">
-              Don't have an account? Request access
+            <p>Don&apos;t have an account? Request access</p>
             </button>
           </div>
         </div>
