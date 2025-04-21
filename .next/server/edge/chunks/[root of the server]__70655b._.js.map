@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/middleware.ts"],"sourcesContent":["import { cookies } from \"next/headers\";\r\nimport { NextRequest, NextResponse } from \"next/server\";\r\n\r\nexport default async function middleware(req: NextRequest) {\r\n\r\n\r\n}"],"names":[],"mappings":";;;AAGe,eAAe,WAAW,GAAgB,GAGzD"}},
-    {"offset": {"line": 27, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

@@ -11,7 +11,7 @@ export const serverAuthenticateArcGIS = async (
         username,
         password,
         client: 'referer',
-        referer: 'http://localhost:3000', // or use process.env if deploying
+        referer: process.env.NEXT_PUBLIC_GEOPORTAL_URL || '/',
         f: 'json',
       });
   
