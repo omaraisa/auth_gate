@@ -5,12 +5,12 @@ import "./globals.css";
 const oxanium = localFont({
   src: [
     {
-      path: "/fonts/oxanium-Regular.ttf",
+      path: "/fonts/Oxanium-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "/fonts/oxanium-Bold.ttf",
+      path: "/fonts/Oxanium-Bold.ttf",
       weight: "600",
       style: "normal",
     }
