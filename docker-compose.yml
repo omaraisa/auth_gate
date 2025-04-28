@@ -2,9 +2,9 @@ services:
   authgate:
     build: .
     environment:
-      - PORT=3000
+      - PORT=3101
     expose:
-      - "3000"
+      - "3101"
     networks:
       - gis_net
 
