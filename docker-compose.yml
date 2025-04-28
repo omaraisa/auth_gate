@@ -1,0 +1,13 @@
+services:
+  authgate:
+    build: .
+    environment:
+      - PORT=3000
+    expose:
+      - "3000"
+    networks:
+      - gis_net
+
+networks:
+  gis_net:
+    external: true
