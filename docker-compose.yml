@@ -4,7 +4,9 @@ services:
     environment:
       - PORT=3101
     expose:
-      - "3101"
+      - "3000"
+    ports:
+      - "3000:3101"  
     networks:
       - gis_net
 
