@@ -44,8 +44,8 @@ export async function login(prevState: {
     path: '/',
     expires: new Date(tokenData.expires),
   });
-  alert(`going to geoportal: ${process.env.NEXT_PUBLIC_GEOPORTAL_URL}`);
-  redirect(process.env.NEXT_PUBLIC_GEOPORTAL_URL || '/');
+
+  redirect('/geoportal/');
   }
 
   return {
