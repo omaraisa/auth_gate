@@ -31,7 +31,7 @@ export async function login(prevState: {
   const cookieStore = await cookies();
   cookieStore.set('arcgis_token', tokenData.token, {
     httpOnly: false,
-    secure: true,
+    secure: false,
     sameSite: 'lax',
     path: '/',
     expires: new Date(tokenData.expires),
@@ -39,7 +39,7 @@ export async function login(prevState: {
 
   cookieStore.set('arcgis_token_expiry', tokenData.expires.toString(), {
     httpOnly: false,
-    secure: true,
+    secure: false,
     sameSite: 'lax',
     path: '/',
     expires: new Date(tokenData.expires),
