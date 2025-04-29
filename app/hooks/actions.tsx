@@ -45,7 +45,7 @@ export async function login(prevState: {
     expires: new Date(tokenData.expires),
   });
 
-  redirect('/geoportal/');
+  redirect('/geoportal/geoportal');
   }
 
   return {
