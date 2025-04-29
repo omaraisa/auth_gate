@@ -45,7 +45,7 @@ export async function login(prevState: {
     expires: new Date(tokenData.expires),
   });
 
-  redirect('gis.jda.gov.sa');
+  redirect('http://gis.jda.gov.sa');
   }
 
   return {
