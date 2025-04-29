@@ -45,7 +45,7 @@ export async function login(prevState: {
     expires: new Date(tokenData.expires),
   });
 
-  redirect('http://192.168.1.60/geoportal/');
+  globalThis.location.href = 'http://192.168.1.60/geoportal/';
   }
 
   return {
