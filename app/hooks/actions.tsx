@@ -45,8 +45,7 @@ export async function login(prevState: {
     expires: new Date(tokenData.expires),
   });
 
-  console.log('Token set successfully:', tokenData.token);
-  // redirect('http://192.168.1.60');
+  redirect('http://192.168.1.60');
   }
 
   return {
