@@ -31,21 +31,21 @@ export async function login(prevState: {
   const cookieStore = await cookies();
   cookieStore.set('arcgis_token', tokenData.token, {
     httpOnly: false,
-    secure: false,
-    sameSite: 'lax',
+    secure: true,
+    sameSite: 'none', 
     path: '/',
     expires: new Date(tokenData.expires),
   });
 
   cookieStore.set('arcgis_token_expiry', tokenData.expires.toString(), {
     httpOnly: false,
-    secure: false,
-    sameSite: 'lax',
+    secure: true,
+    sameSite: 'none', 
     path: '/',
     expires: new Date(tokenData.expires),
   });
 
-  redirect('http://192.168.1.60/geoportal/');
+  redirect(process.env.NEXT_PUBLIC_GEOPORTAL_URL || '/');
   }
 
   return {
