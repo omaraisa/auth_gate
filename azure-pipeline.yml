@@ -10,6 +10,8 @@ variables:
   NEXT_PUBLIC_PORTAL_URL : 'https://gis.jda.gov.sa/portal'
   NEXT_PUBLIC_PORTAL_TOKEN_SERVICE_URL : 'https://gis.jda.gov.sa/portal/sharing/rest/generateToken'
   NEXT_PUBLIC_GEOPORTAL_URL : 'http://192.168.1.60'
+  NEXT_PUBLIC_GUEST_USERNAME: 'gisguest'
+  NEXT_PUBLIC_GUEST_PASSWORD: 'Gisguest@2030'
       
 steps:
   - script: |
@@ -17,9 +19,11 @@ steps:
       echo '{"registry-mirrors": ["https://hub-mirror.c.163.com"]}' > ~/.docker/config.json 
       docker compose -f docker-compose.yml build \
          --build-arg NEXT_PUBLIC_ArcGISAPIKey=$(NEXT_PUBLIC_ArcGISAPIKey) \
-          --build-arg NEXT_PUBLIC_PORTAL_URL=$(NEXT_PUBLIC_PORTAL_URL) \
-          --build-arg NEXT_PUBLIC_PORTAL_TOKEN_SERVICE_URL=$(NEXT_PUBLIC_PORTAL_TOKEN_SERVICE_URL) \
-          --build-arg NEXT_PUBLIC_GEOPORTAL_URL=$(NEXT_PUBLIC_GEOPORTAL_URL)
+         --build-arg NEXT_PUBLIC_PORTAL_URL=$(NEXT_PUBLIC_PORTAL_URL) \
+         --build-arg NEXT_PUBLIC_PORTAL_TOKEN_SERVICE_URL=$(NEXT_PUBLIC_PORTAL_TOKEN_SERVICE_URL) \
+         --build-arg NEXT_PUBLIC_GEOPORTAL_URL=$(NEXT_PUBLIC_GEOPORTAL_URL) \
+         --build-arg NEXT_PUBLIC_GUEST_USERNAME=$(NEXT_PUBLIC_GUEST_USERNAME) \
+         --build-arg NEXT_PUBLIC_GUEST_PASSWORD=$(NEXT_PUBLIC_GUEST_PASSWORD)
     displayName: 'Build Docker Image with Docker Mirror'
 
   - script: |
